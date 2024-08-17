@@ -8,7 +8,7 @@ from itertools import chain
 from itertools import repeat
 from pathlib import Path
 
-from ...autodoc_hook.config import Config
+from ..config import Config
 
 
 def modify_file(filepath: Path, config: Config) -> int:
@@ -38,7 +38,7 @@ def modify_file(filepath: Path, config: Config) -> int:
     python_script = [
         "python3",
         "main.py",
-        "--code",
+        "--src",
         code,
         "--huggingface_token",
         config.huggingface_token.get_secret_value(),
@@ -48,7 +48,7 @@ def modify_file(filepath: Path, config: Config) -> int:
         + api_keys
         + [
             "-v",
-            f"{config.huggingface_home.expanduser().absolute()}:/code/models",
+            f"{config.huggingface_home.expanduser().absolute()}:/src/models",
             "--rm",
             docker_image,
         ]
