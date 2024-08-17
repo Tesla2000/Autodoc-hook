@@ -23,9 +23,9 @@ repos:
     hooks:
       - id: flake8
         args: [ "--ignore=E203,W503" ]
-#  - repo: https://github.com/Tesla2000/Autodoc-hook
-#    rev: '0.0.4'
-#    hooks:
-#      - id: autodoc
-#        stages: [push]
+  - repo: https://github.com/Tesla2000/Autodoc-hook
+    rev: '0.0.4'
+    hooks:
+      - id: autodoc
+        stages: [push]
 default_stages: [commit]
