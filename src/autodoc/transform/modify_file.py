@@ -38,7 +38,7 @@ def modify_file(filepath: Path, config: Config) -> int:
     python_script = [
         "python3",
         "main.py",
-        "--src",
+        "--code",
         code,
         "--huggingface_token",
         config.huggingface_token.get_secret_value(),
@@ -48,7 +48,7 @@ def modify_file(filepath: Path, config: Config) -> int:
         + api_keys
         + [
             "-v",
-            f"{config.huggingface_home.expanduser().absolute()}:/src/models",
+            f"{config.huggingface_home.expanduser().absolute()}:/code/models",
             "--rm",
             docker_image,
         ]

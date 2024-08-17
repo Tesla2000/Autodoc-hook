@@ -18,7 +18,7 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="/root/.local/bin:$PATH"
 
 # Set work directory
-RUN mkdir -p /src
+RUN mkdir -p /autodoc
 WORKDIR /code
 
 # Copy project files
@@ -30,7 +30,7 @@ RUN poetry config virtualenvs.create false
 # Install dependencies
 RUN poetry install --only main --no-root --no-interaction
 
-# Copy the rest of the src
+# Copy the rest of the Autodoc-hook
 COPY . /code
 
 # Run the application

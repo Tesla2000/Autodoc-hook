@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.config import Config
-from src.config import create_config_with_args
-from src.config import parse_arguments
-from src.transform.modify_file import modify_file
+from .config import Config
+from .config import create_config_with_args
+from .config import parse_arguments
+from .transform.modify_file import modify_file
 
 
 def main():
