@@ -27,7 +27,8 @@ class CustomArgumentParser(argparse.ArgumentParser):
             **kwargs,
         )
 
-    def _str2bool(self, v: Any) -> Any:
+    @staticmethod
+    def _str2bool(v: Any) -> Any:
         if isinstance(v, bool):
             return v
         if v.lower() in ("yes", "true", "t", "y", "1"):
