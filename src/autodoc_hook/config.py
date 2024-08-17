@@ -10,7 +10,7 @@ from pydantic import BaseModel
 from pydantic import Field
 from pydantic import SecretStr
 
-from src.custom_argument_parser import CustomArgumentParser
+from .custom_argument_parser import CustomArgumentParser
 
 load_dotenv()
 

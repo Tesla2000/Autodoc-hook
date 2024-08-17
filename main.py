@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.config import Config
-from src.config import create_config_with_args
-from src.config import parse_arguments
-from src.transform.modify_file import modify_file
+from src.autodoc_hook.config import Config
+from src.autodoc_hook.config import create_config_with_args
+from src.autodoc_hook.config import parse_arguments
+from src.autodoc_hook.transform.modify_file import modify_file
 
 
 def main():

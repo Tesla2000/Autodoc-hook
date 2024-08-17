@@ -8,7 +8,7 @@ from itertools import chain
 from itertools import repeat
 from pathlib import Path
 
-from src.config import Config
+from ...autodoc_hook.config import Config
 
 
 def modify_file(filepath: Path, config: Config) -> int:
