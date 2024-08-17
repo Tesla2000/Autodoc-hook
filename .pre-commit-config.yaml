@@ -29,4 +29,5 @@ repos:
         name: autodoc
         entry: .venv/bin/python main.py
         language: python
+        stages: [push]
 default_stages: [commit]

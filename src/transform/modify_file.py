@@ -119,7 +119,6 @@ def modify_file(filepath: Path, config: Config) -> int:
         print("Operation encountered errors.")
 
     if not return_code and code.strip() != stdout_output.strip():
-        print("Is the same:", code.strip() != stdout_output.strip())
         filepath.write_text(stdout_output)
 
     return return_code or code.strip() != stdout_output.strip()
