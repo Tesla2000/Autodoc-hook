@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Autodoc-hook"
+name = "Autodoc"
 version = "0.1.0"
 description = ""
 authors = ["Tesla2000 <fratajczak124@gmail.com>"]
@@ -20,4 +20,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-autodoc = "autodoc_hook:autodoc_hook.main"
+autodoc = "autodoc:main"
