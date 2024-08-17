@@ -11,15 +11,15 @@ from src.autodoc_hook.transform.modify_file import modify_file
 def main():
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
-    retv = 0
+    fails = 0
     for filename in map(Path, config.filenames):
         if filename.suffix != ".py":
             continue
-        retv |= modify_file(
+        fails |= modify_file(
             filename,
             config=config,
         )
-    return retv
+    return fails
 
 
 if __name__ == "__main__":
