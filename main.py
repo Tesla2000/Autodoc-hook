@@ -13,6 +13,8 @@ def main():
     config = create_config_with_args(Config, args)
     retv = 0
     for filename in map(Path, config.filenames):
+        if filename.suffix != ".py":
+            continue
         retv |= modify_file(
             filename,
             config=config,

@@ -14,15 +14,15 @@ from src.config import Config
 def modify_file(filepath: Path, config: Config) -> int:
     """
     This function modifies a file by running a Docker container with a Python
-    script that utilizes an API key and a Hugging Face token. It reads the
-    file's content, builds a Docker command, executes the command, and then
-    compares the output to the original file content.
-    :param filepath: This parameter represents the path to the file that will
-    be modified by the function.
-    :param config: The `config` parameter holds a configuration object
-    containing API keys and other settings for the script.
-    :return: The function returns an integer indicating the exit code of a
-    Docker container execution.
+    script that processes the file's content using a provided configuration. It
+    utilizes Docker to execute the script, capturing both standard output and
+    standard error, and then compares the output to the original file content.
+    :param filepath: The `filepath` parameter represents the path to the file
+    whose content will be modified.
+    :param config: The `config` parameter is used to configure the script's
+    behavior, including API keys and Hugging Face token.
+    :return: The function returns an integer indicating the success or failure
+    of the Docker build process.
     """
     code = filepath.read_text()
 
@@ -118,10 +118,11 @@ def modify_file(filepath: Path, config: Config) -> int:
         print(stderr_output)
         print("Operation encountered errors.")
 
-    if not return_code and code != stdout_output:
+    if not return_code and code.strip() != stdout_output.strip():
+        print("Is the same:", code.strip() != stdout_output.strip())
         filepath.write_text(stdout_output)
 
-    return return_code or code != stdout_output
+    return return_code or code.strip() != stdout_output.strip()
 
 
 if __name__ == "__main__":
