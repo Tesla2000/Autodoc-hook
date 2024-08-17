@@ -1,7 +1,7 @@
--   id: Autodoc-hook
-    name: Autodoc-hook
+-   id: autodoc
+    name: autodoc
     description: This hook automatically documents python functions and methods with docstrings.
-    entry: Autodoc-hook
+    entry: autodoc
     language: python
     types: [python]
     files: ''
