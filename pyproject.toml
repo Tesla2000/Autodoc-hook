@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ProjectBlueprint"
+name = "Autodoc-hook"
 version = "0.1.0"
 description = ""
 authors = ["Tesla2000 <fratajczak124@gmail.com>"]
