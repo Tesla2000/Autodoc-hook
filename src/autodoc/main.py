@@ -20,7 +20,3 @@ def main():
             config=config,
         )
     return fails
-
-
-if __name__ == "__main__":
-    exit(main())
