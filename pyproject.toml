@@ -20,4 +20,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-autodoc = "autodoc:autodoc_hook.main"
+autodoc = "autodoc_hook:autodoc_hook.main"
