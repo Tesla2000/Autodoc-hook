@@ -12,7 +12,7 @@ def main():
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
     fails = 0
-    print(config.filenames)
+    print("Filenames:", config.filenames)
     for filename in map(Path, config.filenames):
         if filename.suffix != ".py":
             continue
