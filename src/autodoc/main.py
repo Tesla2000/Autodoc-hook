@@ -8,11 +8,10 @@ from .config import parse_arguments
 from .transform.modify_file import modify_file
 
 
-def main():
+def main(*_):
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
     fails = 0
-    raise ValueError("File names:", config.filenames)
     for filename in map(Path, config.filenames):
         if filename.suffix != ".py":
             continue
