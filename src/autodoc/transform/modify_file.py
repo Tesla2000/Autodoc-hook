@@ -12,6 +12,18 @@ from ..config import Config
 
 
 def modify_file(filepath: Path, config: Config) -> int:
+    """
+    This function modifies a file by running a Docker container with a Python
+    script that processes the file's content using a specified configuration.
+    It utilizes Docker to execute the script, capturing both standard output
+    and standard error, and compares the output to the original file content.
+    :param config: The `config` parameter is used to configure the script's
+    behavior, including API keys and Hugging Face token.
+    :param filepath: This parameter represents the path to the file that will
+    be modified by the function.
+    :return: The function returns an integer indicating the success or failure
+    of the Docker build process.
+    """
     code = filepath.read_text()
 
     docker_image = "fratajczak/autodoc"
