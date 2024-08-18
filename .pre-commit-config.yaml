@@ -28,5 +28,5 @@ repos:
     hooks:
       - id: autodoc
         stages: [push]
-        args: ["--llm google/gemma-2-2b-it"]
+        args: [--llm, google/gemma-2-2b-it]
 default_stages: [commit]
