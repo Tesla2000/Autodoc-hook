@@ -12,11 +12,10 @@ def main():
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
     fails = 0
-    for filename in map(Path, config.filenames):
-        if filename.suffix != ".py":
-            continue
+    paths = map(Path, config.filenames)
+    for filepath in filter(lambda path: path.suffix == ".py", paths):
         fails |= modify_file(
-            filename,
+            filepath,
             config=config,
         )
     return fails
