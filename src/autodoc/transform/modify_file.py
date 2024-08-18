@@ -42,6 +42,8 @@ def modify_file(filepath: Path, config: Config) -> int:
         code,
         "--huggingface_token",
         config.huggingface_token.get_secret_value(),
+        "--llm",
+        config.llm,
     ]
     command = (
         ["docker", "run", "--gpus", "all"]

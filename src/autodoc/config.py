@@ -21,6 +21,7 @@ class Config(BaseModel):
     huggingface_token: SecretStr = os.getenv("HUGGINGFACE_API_TOKEN") or ""
     huggingface_home: Path = Path("~/.cache/huggingface/hub")
     api_keys: list[str] = Field(default_factory=list)
+    llm: str = "gpt-4o-mini"
 
 
 def parse_arguments(config_class: Type[Config]) -> Namespace:
