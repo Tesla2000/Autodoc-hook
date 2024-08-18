@@ -8,14 +8,14 @@ from .config import parse_arguments
 from .transform.modify_file import modify_file
 
 
-def main(file_extension: str = ".py"):
+def main():
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
-    fails = 0
+    fail = 0
     paths = map(Path, config.filenames)
-    for filepath in filter(lambda path: path.suffix == file_extension, paths):
-        fails |= modify_file(
+    for filepath in filter(lambda path: path.suffix == ".py", paths):
+        fail |= modify_file(
             filepath,
             config=config,
         )
-    return fails
+    return fail
