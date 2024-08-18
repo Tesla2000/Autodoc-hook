@@ -8,7 +8,7 @@ from .config import parse_arguments
 from .transform.modify_file import modify_file
 
 
-def main(*_):
+def main():
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
     fails = 0
