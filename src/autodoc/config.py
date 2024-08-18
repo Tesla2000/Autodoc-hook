@@ -25,14 +25,6 @@ class Config(BaseModel):
 
 
 def parse_arguments(config_class: Type[Config]) -> Namespace:
-    """
-    This function parses command-line arguments based on a configuration class.
-    It creates an argument parser, adds arguments for each field in the
-    configuration class, and handles default values and help messages.
-    :param config_class: `config_class` is a type that defines the fields and
-    their corresponding types for configuring the application settings.
-    :return: A `ArgumentParser` object for parsing command-line arguments.
-    """
     parser = CustomArgumentParser(
         description="Configure the application settings."
     )
