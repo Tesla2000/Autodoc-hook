@@ -11,6 +11,7 @@ from .transform.modify_file import modify_file
 def main():
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
+    # fail = 0
     fail = 0
     paths = map(Path, config.filenames)
     for filepath in filter(lambda path: path.suffix == ".py", paths):
