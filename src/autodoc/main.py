@@ -8,14 +8,7 @@ from .config import parse_arguments
 from .transform.modify_file import modify_file
 
 
-def main():
-    """
-    This function processes a list of Python files based on configuration
-    parameters, modifying each file and returning a flag indicating any
-    failures encountered. It iterates through the files, applying modifications
-    defined by the configuration and reporting any errors encountered.
-    :return: Number of files modified that failed.
-    """
+def main() -> int:
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
     fail = 0
