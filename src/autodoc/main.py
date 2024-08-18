@@ -12,7 +12,6 @@ def main() -> int:
     args = parse_arguments(Config)
     config = create_config_with_args(Config, args)
     fail = 0
-    # fail = 0
     paths = map(Path, config.filenames)
     for filepath in filter(lambda path: path.suffix == ".py", paths):
         fail |= modify_file(

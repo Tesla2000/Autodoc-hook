@@ -28,5 +28,5 @@ repos:
     hooks:
       - id: autodoc
         stages: [push]
-        args: [--llm, google/gemma-2-2b-it]
+        args: [--llm, gpt-4o-mini, --api_keys, OPENAI_API_KEY]
 default_stages: [commit]
